@@ -60,4 +60,19 @@ function unFlipCards()
     }, 1200);
 }
 
+function resetBoard()
+{
+    [hasFlippedCard, lockBoard] = [false,false];
+    [firstCard,secondCard] = [null, null];
+}
+
+// Immediately Invoked Function Expression, it will be executed right after it's definition
+(function shuffle()
+{
+    cards.forEach(card => {
+        let randomPos = Math.floor(Math.random()*12);
+        card.style.order = randomPos;
+    });
+})();
+
 cards.forEach(card => card.addEventListener('click', flipCard))
