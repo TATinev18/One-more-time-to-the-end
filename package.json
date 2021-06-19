@@ -1,0 +1,23 @@
+{
+  "name": "one-more-time-to-the-end",
+  "version": "1.0.0",
+  "description": "Project about coral reefs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TATinev18/One-more-time-to-the-end.git"
+  },
+  "author": "OMTTTE-team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TATinev18/One-more-time-to-the-end/issues"
+  },
+  "homepage": "https://github.com/TATinev18/One-more-time-to-the-end#readme",
+  "dependencies": {
+    "msnodesqlv8": "^2.2.0",
+    "mssql": "^7.1.3"
+  }
+}
