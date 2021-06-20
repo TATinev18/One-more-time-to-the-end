@@ -31,17 +31,9 @@ const {config} = require('./config/database_config');
 
         app.get('/users', function(req, res)
         {
-            const users = [
-                {username: result.recordset[0].username, email: result.recordset[0].email},
-                {username: result.recordset[1].username, email: result.recordset[1].email},
-            ]
-            const username = result.recordset[0].username;
-            const email = result.recordset[0].email;
-            res.render('showUsers', {
-                userList : users
-                // UserName: username,
-                // Email: email,
-            });
+            res.render('showUsers',
+                { userList: result.recordset }
+            );
         });
 
         app.get('*', function(req, res)
