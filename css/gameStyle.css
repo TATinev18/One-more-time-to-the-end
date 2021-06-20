@@ -10,7 +10,7 @@
 body
 {
     background-repeat: no-repeat, repeat;
-    background-color: blue;
+    background-color: #0D98BA;
     height: 100vh;
 }
 
@@ -29,6 +29,7 @@ header
     justify-content: flex-end;
     align-items: center;
     padding: 1% 10%;
+    border-bottom: 1px solid black;
 }
 
 .logo
@@ -77,8 +78,8 @@ header
 
 .memory-game
 {
-    width:  640px;
-    height:  640px;
+    width:  50%;
+    height:  80%;
     display: flex;
     margin: auto;
     flex-wrap: wrap;
@@ -124,3 +125,48 @@ header
     height: 150px;
     width: 150px;
 } */
+
+.rights {
+    background-color: #3EB489;
+     width: 100%;
+     padding-top: 5%;
+     padding-bottom: 2%;
+     text-align: center;
+}
+/* For the footer tag*/
+
+.white {
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+.a {
+    color: rgb(46, 46, 46);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.0vw;
+    text-decoration: none;
+    letter-spacing: 0.15vw;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 0.16vw;
+}
+
+a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 0.2vw;
+    left: 0;
+    position: absolute;
+    background: rgb(0, 0, 0);
+    transition: width 0.5s ease 0s, left 0.5s ease 0s;
+    width: 0;
+}
+
+.a:hover:after {
+    width: 100%;
+    left: 0;
+}

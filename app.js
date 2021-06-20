@@ -17,11 +17,6 @@ const {config} = require('./config/database_config');
 
         // express experiments
 
-        app.get('/', function(req, res)
-        {
-            res.render('index');
-        });
-
         app.get('/users', function(req, res)
         {
             const users = [
