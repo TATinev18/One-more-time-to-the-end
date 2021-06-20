@@ -5,6 +5,7 @@ const {config} = require('./config/database_config');
     try{
         console.log('Trying to connect');
         let connection = await sql.connect(config);
+        console.log('Connected');
 
         const result = await connection.request().query(`SELECT * FROM Users`);
         console.log(result.recordset);
