@@ -1,8 +1,10 @@
 const sql = require('mssql/msnodesqlv8');
 const express = require('express');
+const path = require('path');
 const app = express();
 
 app.set('view engine', 'ejs');
+app.use(express.static('public'))
 
 const {config} = require('./config/database_config');
 
@@ -16,6 +18,16 @@ const {config} = require('./config/database_config');
         console.log(result.recordset);
 
         // express experiments
+
+        app.get('/', function(req, res)
+        {
+            res.render('index');
+        });
+
+        app.get('/game', function(req, res)
+        {
+            res.render('gamePage');
+        });
 
         app.get('/users', function(req, res)
         {
