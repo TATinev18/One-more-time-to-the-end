@@ -17,7 +17,7 @@ const {config} = require('./config/database_config');
         const result = await connection.request().query(`SELECT * FROM Users`);
         console.log(result.recordset);
 
-        // express experiments
+        // express
 
         app.get('/', function(req, res)
         {
@@ -38,7 +38,7 @@ const {config} = require('./config/database_config');
 
         app.get('*', function(req, res)
         {
-            res.send('Error: Page not found');
+            res.render('error_page');
         });
 
         app.listen('5500', function(req, res) {
