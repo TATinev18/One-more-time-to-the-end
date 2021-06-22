@@ -17,6 +17,9 @@ const {config} = require('./config/database_config');
         const result = await connection.request().query(`SELECT * FROM Users`);
         console.log(result.recordset);
 
+        const coral_result = await connection.request().query(`SELECT typeName, description FROM Corals`);
+        console.log(coral_result.recordset);
+
         // express
 
         app.get('/', function(req, res)
@@ -49,6 +52,12 @@ const {config} = require('./config/database_config');
         {
             res.render('showUsers',
                 { userList: result.recordset }
+            );
+        });
+
+        app.get('/CoralsInfo', function(req, res) {
+            res.render('CoralsInfo', 
+              {CoralList: coral_result.recordset}
             );
         });
 
