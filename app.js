@@ -24,6 +24,21 @@ const {config} = require('./config/database_config');
             res.render('index');
         });
 
+        app.get('/CoralAdoption', function(req, res)
+        {
+            res.render('CoralAdoption');
+        });
+
+        app.get('/HelpCorals', function(req, res)
+        {
+            res.render('HelpCorals');
+        });
+
+        app.get('/ImportanceOfCorals', function(req, res)
+        {
+            res.render('ImportanceOfCorals');
+        });
+
         app.get('/game', function(req, res)
         {
             res.render('gamePage');
