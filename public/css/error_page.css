@@ -4,12 +4,15 @@
 }
 body
 {
-    padding:0;margin:0}#notfound
+    padding:0;
+    margin:0
+}
+#notfound
 {
     position:relative;
     height:100vh
-}#notfound 
-.notfound
+}
+#notfound .notfound
 {
     position:absolute;
     left:50%;top:50%;
