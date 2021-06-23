@@ -1,3 +1,4 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 const { request } = require('express');
 const express = require('express');
 const nodemailer = require("nodemailer");
@@ -22,14 +23,14 @@ router.post('/contact', function (req, res){
         host: 'smtp.gmail.com',
         secure: true,
         auth: {
-            user: 'georgikal4ev@gmail.com',
+            user: 'omttte2@gmail.com',
             pass: 'pass'
         }
     })
 
     const mailOptions = {
         from: req.body.email,
-        to: 'georgikal4ev@gmail.com',
+        to: 'omttte2@gmail.com',
         subject: `Message from ${req.body.email}: ${req.body.subject}`,
         text: req.body.message
     }
