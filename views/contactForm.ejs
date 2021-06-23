@@ -25,12 +25,12 @@
     </header>
 
     <div class="form-container">
-        <form class="contact-form">
+        <form class="contact-form" action="/contact" method = "POST">
             <h2>CONTACT US</h2>
-            <input type="text" id="name" placeholder="Full name"></br>
-            <input type="email" id="email" placeholder="Email"></br>
-            <input type="text" id="subject" placeholder="Subject"></br>
-            <textarea id="message" placeholder="Message" cols="30" rows="10"></textarea></br>
+            <input type="text" name="name_" id="name" placeholder="Full name"></br>
+            <input type="email" name="email" id="email" placeholder="Email"></br>
+            <input type="text" name="subject" id="subject" placeholder="Subject"></br>
+            <textarea id="message" name="message" placeholder="Message" cols="30" rows="10"></textarea></br>
             <input type="submit" class="submit" value="Send Message">
         </form>
     </div>

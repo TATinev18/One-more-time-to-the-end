@@ -1,3 +1,4 @@
+const { request } = require('express');
 const express = require('express');
 const nodemailer = require("nodemailer");
 
@@ -11,13 +12,18 @@ router.get('/contact', function (req, res) {
 });
 
 router.post('/contact', function (req, res){
-    console.log(req.body);
+
+    let formData = req.body;
+    console.log(formData);
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',
+        port: 465,
+        host: 'smtp.gmail.com',
+        secure: true,
         auth: {
             user: 'georgikal4ev@gmail.com',
-            pass: 'password'
+            pass: 'pass'
         }
     })
 

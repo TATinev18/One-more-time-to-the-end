@@ -31,7 +31,6 @@ router.post('/register', async function(req, res, next) {
     } catch (err) {
         console.log(err.message)
         return displayError(res, "Error!");
-        return;
     }
 
     res.redirect("/register");

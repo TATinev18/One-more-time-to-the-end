@@ -15,6 +15,7 @@ contactForm.addEventListener('submit', (e)=>{
         message: message.value
     }
 
+    // Using XMLHttpRequest() to exchange data between the web site and a server
     let xhr = new XMLHttpRequest();
     xhr.open('POST', '/contact');
     xhr.setRequestHeader("content-type", "application/json");

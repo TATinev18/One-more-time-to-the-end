@@ -11,6 +11,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.json());
 
+app.use('/', contact_form_router);
+
 const {config} = require('./config/database_config');
 
 (async () => {
@@ -70,7 +72,7 @@ const {config} = require('./config/database_config');
         app.get('/register', user_registration_router);
 
         // contact form
-        app.get('/contact', contact_form_router);
+        //app.get('/contact', contact_form_router);
 
         // catch 404 and forward to error handler
         app.use('*', function(req, res, next) {
