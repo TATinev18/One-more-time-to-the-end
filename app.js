@@ -1,8 +1,10 @@
 const sql = require('mssql/msnodesqlv8');
 const express = require('express');
 const path = require('path');
+const PORT = process.env.PORT || 5500;
 const app = express();
-let user_registration_router = require('./public/js/user_register');
+let user_registration_router = require('./routes/user_register');
+let contact_form_router = require('./routes/contact_form');
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'))
@@ -64,6 +66,8 @@ const {config} = require('./config/database_config');
         });
 
         app.get('/register', user_registration_router);
+        
+        app.get('/contact', contact_form_router);
 
         // catch 404 and forward to error handler
         app.use('*', function(req, res, next) {
@@ -81,8 +85,8 @@ const {config} = require('./config/database_config');
             res.render('error_page');
         });
 
-        app.listen('5500', function(req, res) {
-            console.log(' Website');
+        app.listen(PORT, function(req, res) {
+            console.log(`Server running on port ${PORT}`);
         });
         //
     }

@@ -1,5 +1,5 @@
 const express = require('express');
-const {config} = require('../../config/database_config');
+const {config} = require('../config/database_config');
 const sql = require('mssql/msnodesqlv8');
 
 let router = express.Router();
