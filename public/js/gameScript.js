@@ -66,6 +66,11 @@ function resetBoard()
     [firstCard,secondCard] = [null, null];
 }
 
+function restartGame()
+{
+    location.reload();
+}
+
 // Immediately Invoked Function Expression, it will be executed right after it's definition
 (function shuffle()
 {
