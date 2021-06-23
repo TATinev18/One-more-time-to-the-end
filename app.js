@@ -2,6 +2,7 @@ const sql = require('mssql/msnodesqlv8');
 const express = require('express');
 const path = require('path');
 const app = express();
+let user_registration_router = require('./public/js/user_register');
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'))
@@ -55,11 +56,14 @@ const {config} = require('./config/database_config');
             );
         });
 
+        //show all corals from the database
         app.get('/CoralsInfo', function(req, res) {
             res.render('CoralsInfo', 
               {CoralList: coral_result.recordset}
             );
         });
+
+        app.get('/register', user_registration_router);
 
         // catch 404 and forward to error handler
         app.use('*', function(req, res, next) {
