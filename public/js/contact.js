@@ -22,7 +22,7 @@ contactForm.addEventListener('submit', (e)=>{
 
         console.log(xhr.responseText);
 
-        if(xhr.responseText === 'success'){
+        if(xhr.responseText == 'success'){
 
             alert('Email sent');
             name_.value = '';
