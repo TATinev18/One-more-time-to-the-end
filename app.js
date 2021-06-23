@@ -3,11 +3,13 @@ const express = require('express');
 const path = require('path');
 const PORT = process.env.PORT || 5500;
 const app = express();
+
 let user_registration_router = require('./routes/user_register');
 let contact_form_router = require('./routes/contact_form');
 
 app.set('view engine', 'ejs');
-app.use(express.static('public'))
+app.use(express.static('public'));
+app.use(express.json());
 
 const {config} = require('./config/database_config');
 
@@ -66,7 +68,8 @@ const {config} = require('./config/database_config');
         });
 
         app.get('/register', user_registration_router);
-        
+
+        // contact form
         app.get('/contact', contact_form_router);
 
         // catch 404 and forward to error handler
