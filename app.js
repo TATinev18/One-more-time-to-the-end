@@ -4,6 +4,8 @@ const path = require('path');
 const PORT = process.env.PORT || 5500;
 const app = express();
 
+//let bodyParser = require('body-parser');
+
 let user_registration_router = require('./routes/user_register');
 let contact_form_router = require('./routes/contact_form');
 
@@ -12,6 +14,7 @@ app.use(express.static('public'));
 app.use(express.json());
 
 app.use('/', contact_form_router);
+app.use('/', user_registration_router);
 
 const {config} = require('./config/database_config');
 
@@ -69,7 +72,7 @@ const {config} = require('./config/database_config');
             );
         });
 
-        app.get('/register', user_registration_router);
+        //app.use('/', user_registration_router);
 
         // contact form
         //app.get('/contact', contact_form_router);

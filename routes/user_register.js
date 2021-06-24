@@ -1,9 +1,15 @@
 const express = require('express');
 const {config} = require('../config/database_config');
 const sql = require('mssql/msnodesqlv8');
+let bodyParser = require('body-parser');
 
 let router = express.Router();
 
+// parse application/json
+router.use(bodyParser.json());
+
+// parse application/x-www-form-urlencoded
+router.use(bodyParser.urlencoded({ extended: true }));
 
 router.get('/register', function (req, res)
 {
@@ -12,25 +18,23 @@ router.get('/register', function (req, res)
 
 router.post('/register', async function(req, res, next) {
     try {
-
         // Put data into the Sql server
-        const pool = await sql.connect(config);
+        const pool = await sql.connect   (config);
         const result = await pool.request()
+            .input("username", sql.NVarChar, req.body.username)
             .input("first_name", sql.VarChar, req.body.first_name)
             .input("last_name", sql.VarChar, req.body.last_name)
-            .input("username", sql.NVarChar, req.body.username)
             .input("email", sql.NVarChar, req.body.email)
             .input("password", sql.VarChar, req.body.password)
             .input("age", sql.TinyInt, req.body.age)
             .query(`
                 INSERT INTO Users (username, first_name, last_name,age, email, password)
-                VALUES (@username @first_name, @last_name, @age,  @email, @password)
+                VALUES (@username, @first_name, @last_name, @age,  @email, @password)
             `)
         console.log(result)
 
     } catch (err) {
-        console.log(err.message)
-        return displayError(res, "Error!");
+        console.log(err);
     }
 
     res.redirect("/register");
