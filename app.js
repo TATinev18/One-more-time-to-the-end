@@ -52,6 +52,11 @@ const {config} = require('./config/database_config');
             res.render('ImportanceOfCorals');
         });
 
+        app.get('/TechCorals', function(req, res)
+        {
+            res.render('TechCorals');
+        });
+
         app.get('/game', function(req, res)
         {
             res.render('gamePage');
