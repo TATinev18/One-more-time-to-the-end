@@ -15,12 +15,12 @@
     <div class="form-container">
         <form class="contact-form" method="POST" action="/register">
             <h2>Register</h2>
-            <input type="text" name="username" id="username" placeholder="Username">
-            <input type="text" name="first_name" id="first_name" placeholder="First name">
-            <input type="text" name="last_name" id="last_name"  placeholder="Last name">
-            <input type="email" name="email" id="email" placeholder="email: example@gmail.com">
-            <input type="password" name="password" id="password" placeholder="Password">
-            <input type="text" name="age" id="age" placeholder="Age">
+            <input type="text" name="username" id="username" placeholder="Username" required>
+            <input type="text" name="first_name" id="first_name" placeholder="First name" required>
+            <input type="text" name="last_name" id="last_name"  placeholder="Last name" required>
+            <input type="email" name="email" id="email" placeholder="email: example@gmail.com" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="number" name="age" id="age" placeholder="Age" required>
             <input class="submit" type="submit" value = "Register">
         </form>
     </div>
