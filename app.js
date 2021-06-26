@@ -30,8 +30,6 @@ const {config} = require('./config/database_config');
         const coral_result = await connection.request().query(`SELECT typeName, description FROM Corals`);
         console.log(coral_result.recordset);
 
-        // express
-
         app.get('/', function(req, res)
         {
             res.render('index');
@@ -77,11 +75,6 @@ const {config} = require('./config/database_config');
             );
         });
 
-        //app.use('/', user_registration_router);
-
-        // contact form
-        //app.get('/contact', contact_form_router);
-
         // catch 404 and forward to error handler
         app.use('*', function(req, res, next) {
             next(createError(404));
@@ -101,7 +94,6 @@ const {config} = require('./config/database_config');
         app.listen(PORT, function(req, res) {
             console.log(`Server running on port ${PORT}`);
         });
-        //
     }
     catch(err)
     {
