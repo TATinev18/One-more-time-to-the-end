@@ -27,7 +27,7 @@ const {config} = require('./config/database_config');
         const result = await connection.request().query(`SELECT * FROM Users`);
         console.log(result.recordset);
 
-        const coral_result = await connection.request().query(`SELECT typeName, description FROM Corals`);
+        const coral_result = await connection.request().query(`SELECT typeName, description,images FROM Corals`);
         console.log(coral_result.recordset);
 
         app.get('/', function(req, res)

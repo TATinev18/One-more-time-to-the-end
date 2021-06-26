@@ -15,6 +15,7 @@
     <%for(let i = 0; i < CoralList.length; i++) { %> 
         <h4 >Name: <%=CoralList[i].typeName%></h4>
         <h4>Description: <%=CoralList[i].description%></h4>
+        <img src = "images/coral-info-images/<%=CoralList[i].images%>">
     <%}%>
 
     <%- include('partials/footer') %>
