@@ -11,16 +11,30 @@
 <body>
     <%- include('partials/header') %> 
 
-    <h1>Users list</h1>
-    <%for(let i = 0; i < userList.length; i++) { %> 
-        <h4 >Username: <%=userList[i].username%></h4>
-        <h4>email: <%=userList[i].email%></h4>
-    <%}%>
+    <h1 class = "UserListLable">Users list</h1>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%for(let i = 0; i < userList.length; i++) { %> 
+                    <tr>
+                        <td><%=userList[i].username%></td>
+                        <td><%=userList[i].first_name%> <%=userList[i].last_name%></td>
+                        <td><%=userList[i].email%></td>
+                    </tr>
+                <%}%>
+            </tbody>
 
-    <footer>
-        <div class="rights">
-            <p class="white"> © 2021 Coral Heaven. All Rights Reserved.</p>
-        </div>
-    </footer>
+        <table>
+    </div>
+
+    <%- include('partials/footer') %> 
+    
 </body>
 </html>
