@@ -4,13 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/articles.css">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
     <title>Users list</title>
 </head>
 <body>
+    <header>
+        <img class="logo" src="images/coral_heaven_logo.png" alt="logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a class = "a" href="/">Home</a></li>
+                <li><a class = "a" id="go-to-about" href="/#about">About us</a></li>
+                <li><a class = "a" id="go-to-articles" href="/#articles">Articles</a></li>
+                <li><a class = "a" href="/game">Game</a></li>
+            </ul>
+        </nav>
+        <a class="contact-link" href="/contact"><button class="contact-button">Contact</button></a>
+        <a class="contact-link" href=""><button class="contact-button">Login/Register</button></a>
+    </header>
+
     <h1>Users list</h1>
     <%for(let i = 0; i < userList.length; i++) { %> 
         <h4 >Username: <%=userList[i].username%></h4>
         <h4>email: <%=userList[i].email%></h4>
     <%}%>
+
+    <footer>
+        <div class="rights">
+            <p class="white"> © 2021 Coral Heaven. All Rights Reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

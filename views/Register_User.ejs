@@ -4,17 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contactStyle.css">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
     <title>Register</title>
 </head>
 <body>
-    <form method="POST" action="/register">
-        <input type="text" name="username" id="username" placeholder="username">
-        <input type="text" name="first_name" id="first_name" placeholder="first_name">
-        <input type="text" name="last_name" id="last_name"  placeholder="last_name">
-        <input type="email" name="email" id="email" placeholder="email">
-        <input type="password" name="password" id="password" placeholder="password">
-        <input type="text" name="age" id="age" placeholder="age">
-        <button type="submit">Submit</button>
-    </form>
+
+    <header>
+        <img class="logo" src="images/coral_heaven_logo.png" alt="logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a class = "a" href="/">Home</a></li>
+                <li><a class = "a" id="go-to-about" href="/#about">About us</a></li>
+                <li><a class = "a" id="go-to-articles" href="/#articles">Articles</a></li>
+                <li><a class = "a" href="/game">Game</a></li>
+            </ul>
+        </nav>
+        <a class="contact-link" href="/contact"><button class="contact-button">Contact</button></a>
+        <a class="contact-link" href="/register"><button class="contact-button">Login/Register</button></a>
+    </header>
+
+    <div class="form-container">
+        <form class="contact-form" method="POST" action="/register">
+            <h2>Register</h2>
+            <input type="text" name="username" id="username" placeholder="username">
+            <input type="text" name="first_name" id="first_name" placeholder="first_name">
+            <input type="text" name="last_name" id="last_name"  placeholder="last_name">
+            <input type="email" name="email" id="email" placeholder="email">    
+            <input type="password" name="password" id="password" placeholder="password">
+            <input type="text" name="age" id="age" placeholder="age">
+            <input class="submit" type="submit" value = "Register">
+        </form>
+    </div>
+
+    <footer>
+            <div class="rights">
+                <p class="white"> © 2021 Coral Heaven. All Rights Reserved.</p>
+            </div>
+    </footer>
 </body>
 </html>
