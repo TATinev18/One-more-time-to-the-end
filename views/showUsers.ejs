@@ -9,19 +9,7 @@
     <title>Users list</title>
 </head>
 <body>
-    <header>
-        <img class="logo" src="images/coral_heaven_logo.png" alt="logo">
-        <nav>
-            <ul class="nav-links">
-                <li><a class = "a" href="/">Home</a></li>
-                <li><a class = "a" id="go-to-about" href="/#about">About us</a></li>
-                <li><a class = "a" id="go-to-articles" href="/#articles">Articles</a></li>
-                <li><a class = "a" href="/game">Game</a></li>
-            </ul>
-        </nav>
-        <a class="contact-link" href="/contact"><button class="contact-button">Contact</button></a>
-        <a class="contact-link" href=""><button class="contact-button">Login/Register</button></a>
-    </header>
+    <%- include('partials/header') %> 
 
     <h1>Users list</h1>
     <%for(let i = 0; i < userList.length; i++) { %> 
