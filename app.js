@@ -8,13 +8,20 @@ const app = express();
 
 let user_registration_router = require('./routes/user_register');
 let contact_form_router = require('./routes/contact_form');
+let coral_info_router = require('./routes/coral_info');
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.json());
 
+//Contact us using nodemailer
 app.use('/', contact_form_router);
+
+//Register an user
 app.use('/', user_registration_router);
+
+//show all corals from the database
+app.use('/', coral_info_router);
 
 const {config} = require('./config/database_config');
 
@@ -26,9 +33,6 @@ const {config} = require('./config/database_config');
 
         const result = await connection.request().query(`SELECT * FROM Users`);
         //console.log(result.recordset);
-
-        const coral_result = await connection.request().query(`SELECT typeName, description,images FROM Corals`);
-        //console.log(coral_result.recordset);
 
         app.get('/', function(req, res)
         {
@@ -65,13 +69,6 @@ const {config} = require('./config/database_config');
         {
             res.render('showUsers',
                 { userList: result.recordset }
-            );
-        });
-
-        //show all corals from the database
-        app.get('/CoralsInfo', function(req, res) {
-            res.render('CoralsInfo', 
-              {CoralList: coral_result.recordset}
             );
         });
 
