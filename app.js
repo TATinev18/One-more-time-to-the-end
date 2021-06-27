@@ -9,6 +9,7 @@ const app = express();
 let user_registration_router = require('./routes/user_register');
 let contact_form_router = require('./routes/contact_form');
 let coral_info_router = require('./routes/coral_info');
+let users_list_router = require('./routes/users_list');
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -20,8 +21,11 @@ app.use('/', contact_form_router);
 //Register an user
 app.use('/', user_registration_router);
 
-//show all corals from the database
+//Show all corals from the database
 app.use('/', coral_info_router);
+
+//Show all users from the database
+app.use('/', users_list_router);
 
 const {config} = require('./config/database_config');
 
@@ -30,9 +34,6 @@ const {config} = require('./config/database_config');
         console.log('Trying to connect');
         let connection = await sql.connect(config);
         console.log('Connected');
-
-        const result = await connection.request().query(`SELECT * FROM Users`);
-        //console.log(result.recordset);
 
         app.get('/', function(req, res)
         {
@@ -62,14 +63,6 @@ const {config} = require('./config/database_config');
         app.get('/game', function(req, res)
         {
             res.render('gamePage');
-        });
-
-        //show all users from the database
-        app.get('/users', function(req, res)
-        {
-            res.render('showUsers',
-                { userList: result.recordset }
-            );
         });
 
         // catch 404 and forward to error handler
