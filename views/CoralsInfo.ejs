@@ -11,12 +11,14 @@
 <body>
     <%- include('partials/header') %> 
     
-    <h1>Corals list</h1>
-    <%for(let i = 0; i < CoralList.length; i++) { %> 
-        <h4 >Name: <%=CoralList[i].typeName%></h4>
-        <h4>Description: <%=CoralList[i].description%></h4>
-        <img src = "images/coral-info-images/<%=CoralList[i].images%>"/>
-    <%}%>
+    <div class = "article">
+        <h1 class = "center">Corals list</h1>
+        <%for(let i = 0; i < CoralList.length; i++) { %> 
+            <h4 >Name: <%=CoralList[i].typeName%></h4>
+            <h4>Description: <%=CoralList[i].description%></h4>
+            <img class = "img2" src = "images/coral-info-images/<%=CoralList[i].images%>"/>
+        <%}%>
+    </div>
 
     <%- include('partials/footer') %>
 </body>
