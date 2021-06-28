@@ -55,6 +55,11 @@ const {config} = require('./config/database_config');
             res.render('ImportanceOfCorals');
         });
 
+        app.get('/CoralOrgs', function(req, res)
+        {
+            res.render('CoralOrgs');
+        });
+
         app.get('/TechCorals', function(req, res)
         {
             res.render('TechCorals');

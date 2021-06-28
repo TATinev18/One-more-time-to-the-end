@@ -4,25 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="\public\css\articles.css">
-    <link rel="icon" href="\public\images\logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/articles.css">
+    <link rel="icon" href="/images/logo.png" type="image/x-icon">
     <title>Organisations helping corals</title>
 </head>
 <body>
 
-    <header>
-        <img class="logo" src="images/coral_heaven_logo.png" alt="logo">
-        <nav>
-            <ul class="nav-links">
-                <li><a class = "a" href="/">Home</a></li>
-                <li><a class = "a" id="go-to-about" href="/#about">About us</a></li>
-                <li><a class = "a" id="go-to-articles" href="/#articles">Articles</a></li>
-                <li><a class = "a" href="/game">Game</a></li>
-            </ul>
-        </nav>
-        <a class="contact-link" href="/contact"><button class="contact-button">Contact</button></a>
-        <a class="contact-link" href="/register"><button class="contact-button">Register</button></a>
-    </header>
+    <%- include('partials/header') %> 
 
     <div class = "article">
         <h1>Which organisations are trying to save corals?</h1>
@@ -35,7 +23,7 @@
             the world’s coral reefs, there might be a role for you at CORAL.
         </p>
 
-            <img class = "img1" src = "\public\images\cra.jpg"> 
+            <img class = "img1" src = "/images/cra.jpg"> 
 
         <h2>2. The United States Coral Reef Task Force</h2>
         <p> The United States Coral Reef Task Force (USCRTF) was established in 1998 by Presidential Executive Order to lead U.S. efforts to preserve and 
@@ -43,7 +31,7 @@
             and three Freely Associated States. The USCRTF helps build partnerships, strategies, and support for on-the-ground action to conserve coral reefs.
         </p>
 
-            <img class = "img3" src = "\public\images\TaskForce.jpg">
+            <img class = "img3" src = "/images/TaskForce.jpg">
 
         <h2>3. Coral Reef Rescue Initiative</h2>
         <p>It consists from a group of leading scientists, NGOs and influential partners, working in collaboration with governments and communities to safeguard reefs, 
@@ -54,28 +42,22 @@
             coral reef revival.
         </p>
 
-            <img class = "img2" src = "\public\images\manboath.jpg">
+            <img class = "img2" src = "/images/manboath.jpg">
     </div>
 
     <h1 class="center">Read about:</h1>
 
     <div class="tilesart">
 
-        <a class="tile" href="/IoT-for-corals"><img src="images/IoT.png" />
+        <a class="tile" href="/IoT-for-corals"><img src="/images/IoT.png" />
             <div class="details"><span class="title">IoT for corals</span><span class="info">How Internet of Things help corals to survive</span></div>
         </a>
-        <a class="tile" href="/ImportanceOfCorals"><img src="images/why.jpg" />
+        <a class="tile" href="/ImportanceOfCorals"><img src="/images/why.jpg" />
             <div class="details"><span class="title ">Importance of corals</span><span class="info">What is the purpose of corals for our planet</span></div>
         </a>
     </div>
 
-    <footer>
-        <div class="rights">
-            <p class="white"> © 2021 Coral Heaven. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-
+    <%- include('partials/footer') %>
 
 </body>
 </html>
