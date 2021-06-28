@@ -1,2 +1,6 @@
 # One-more-time-to-the-end
-This is the repo of our team for the last project of this school year
+<p align="center">
+  <a href="https://github.com/TATinev18/One-more-time-to-the-end" rel="noopener">
+    <img src="public\images\coral_heaven_logo.png" alt="Logo" width="200" height="200">
+  </a>
+</p>
