@@ -4,25 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="\public\css\articles.css">
-    <link rel="icon" href="\public\images\logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/articles.css">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
     <title>Organisations helping corals</title>
 </head>
 <body>
 
-    <header>
-        <img class="logo" src="images/coral_heaven_logo.png" alt="logo">
-        <nav>
-            <ul class="nav-links">
-                <li><a class = "a" href="/">Home</a></li>
-                <li><a class = "a" id="go-to-about" href="/#about">About us</a></li>
-                <li><a class = "a" id="go-to-articles" href="/#articles">Articles</a></li>
-                <li><a class = "a" href="/game">Game</a></li>
-            </ul>
-        </nav>
-        <a class="contact-link" href="/contact"><button class="contact-button">Contact</button></a>
-        <a class="contact-link" href="/register"><button class="contact-button">Register</button></a>
-    </header>
+    <%- include('partials/header') %>
+    <%- include('partials/scrollToTop') %>
 
     <div class = "article">
         <h1>Marine IoT for Coral Reefs</h1>
@@ -60,7 +51,7 @@
             </ul> 
         </p>
 
-        <img class = "img2" src = "\public\images\IoT.png"><br>
+        <img class = "img2" src = "images/IoT.png"><br>
         <p>The image above shows habitat maps by drone, underwater LIDAR mapping, Crown of Thorns Starfish detection, the Corycaeus Underwater Hyperspectral Imager, 
             behaviour and habitat selection monitors, monitors for feeding, stress, and reproduction, solar-powered infrastructure powering ulow-power underwater 
             comms, low-power long-range radio frequency transmissions, monitors for biodiversity and structure, and coral health and pathogens, and finally, 
@@ -95,13 +86,8 @@
         </a>
     </div>
 
-    <footer>
-        <div class="rights">
-            <p class="white"> © 2021 Coral Heaven. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-
-
+    <%- include('partials/footer') %>
+    
+    <script src = "/js/scrollToTop.js"></script>
 </body>
 </html>
