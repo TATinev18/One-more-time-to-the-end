@@ -60,6 +60,11 @@ const {config} = require('./config/database_config');
             res.render('CoralOrgs');
         });
 
+        app.get('/IoT-for-corals', function(req, res)
+        {
+            res.render('IoT-for-corals');
+        });
+
         app.get('/TechCorals', function(req, res)
         {
             res.render('TechCorals');
