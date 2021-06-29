@@ -24,7 +24,7 @@ router.post('/contact', function (req, res){
         secure: true,
         auth: {
             user: 'omttte2@gmail.com',
-            pass: 'omttte2211'
+            pass: 'pass'
         }
     })
 

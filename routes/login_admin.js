@@ -29,6 +29,8 @@ router.post('/login', async function(req, res, next) {
             SELECT password FROM Admin WHERE username = @username
         `)
         
+        //Checks if the admin password matches the admin password in the database
+
         if(result.recordset[0].password == req.body.password)
         {
             req.session.isAdmin = true;
