@@ -9,10 +9,15 @@ let router = express.Router();
         let connection = await sql.connect(config);
         const users_result = await connection.request().query(`SELECT * FROM Users`);
 
+        
         router.get('/users', function (req, res)
         {
-            res.render('showUsers', 
-            {userList: users_result.recordset});
+            if (req.session.isAdmin == true) {
+                res.render('showUsers', 
+                {userList: users_result.recordset});
+            } else {
+                res.render('error_page');
+            }
         });
     }
     catch(err)

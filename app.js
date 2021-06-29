@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const PORT = process.env.PORT || 5500;
 const app = express();
+let session = require('express-session')
 
 //let bodyParser = require('body-parser');
 
@@ -10,10 +11,18 @@ let user_registration_router = require('./routes/user_register');
 let contact_form_router = require('./routes/contact_form');
 let coral_info_router = require('./routes/coral_info');
 let users_list_router = require('./routes/users_list');
+let login_admin_router = require('./routes/login_admin');
+
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.json());
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true
+}))
 
 //Contact us using nodemailer
 app.use('/', contact_form_router);
@@ -26,6 +35,9 @@ app.use('/', coral_info_router);
 
 //Show all users from the database
 app.use('/', users_list_router);
+
+//Login admin
+app.use('/', login_admin_router);
 
 const {config} = require('./config/database_config');
 
