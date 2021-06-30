@@ -6,10 +6,10 @@ let bodyParser = require('body-parser');
 
 let router = express.Router();
 
-// parse application/json
+// Parse application/json
 router.use(bodyParser.json());
 
-// parse application/x-www-form-urlencoded
+// Parse application/x-www-form-urlencoded
 router.use(bodyParser.urlencoded({ extended: true }));
 
 router.get('/register', function (req, res)
